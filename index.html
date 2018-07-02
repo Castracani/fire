@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyA_yA5c-tGZ_TaR8de0MgmKTiZ2F4S6tmM",
+      authDomain: "goodlord-6fe1f.firebaseapp.com",
+      databaseURL: "https://goodlord-6fe1f.firebaseio.com",
+      projectId: "goodlord-6fe1f",
+      storageBucket: "goodlord-6fe1f.appspot.com",
+      messagingSenderId: "1009852254812"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="code.js"></script>
+</head>
+
+<body>
+  <input type="text" id="email" label="email" placeholder="email here">
+  <label name="email" value="email"></label>
+  <br />
+  <br />
+  <input type="text" id="username" label="username" placeholder="username here">
+  <label name="username" value="username"></label>
+  <br />
+  <br />
+  <input type="text" id="password" label="username" placeholder="password here">
+  <label name="pasword" value="password"></label>
+  <br />
+  <br />
+  <button type="submit" id="submit-btn">Submit Info</button>
+  <br />
+  <br />
+  <button type="submit" id="login-btn">Login Here</button>
+  <br />
+  <br />
+  <button type="submit" id="signout-btn">Sign Out Here</button>
+
+
+
+</body>
+
+</html>
