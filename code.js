@@ -4,25 +4,26 @@ $(document).ready(function () {
 
   var user = firebase.auth().currentUser;
 
-  //firebase.auth().onAuthStateChanged(function (user) {
-  //var user = firebase.auth().currentUser;
-  //var name, email, photoUrl, uid, emailVerified;
+  firebase.auth().onAuthStateChanged(function (user) {
+    var user = firebase.auth().currentUser;
+    var name, email, photoUrl, uid, emailVerified;
 
 
-  if (user) {
-    // User is signed in.
-    console.log("There's a user signed in!");
-    $("#logged-in").css("display", "inline-block");
-    $("#not-logged-in").css("display", "none");
+    if (user) {
+      // User is signed in.
+      console.log("There's a user signed in!");
+      $("#logged-in").css("display", "inline-block");
+      $("#not-logged-in").css("display", "none");
 
-    if (user != null) {
-      var emailID = user.email;
-      $("#welcome-text").text(" Happy to have you here, " + emailID + "!");
-      name = user.displayName;
-      email = user.email;
-      emailVerified = user.emailVerified;
-      uid = user.uid;
-      console.log(name, email, emailVerified, uid);
+      if (user != null) {
+        var emailID = user.email;
+        $("#welcome-text").text(" Happy to have you here, " + emailID + "!");
+        name = user.displayName;
+        email = user.email;
+        emailVerified = user.emailVerified;
+        uid = user.uid;
+        console.log(name, email, emailVerified, uid)                           
+      }
     } else {
       // No user is signed in.
       console.log("Nobody's here!");
@@ -30,7 +31,7 @@ $(document).ready(function () {
       $("#not-logged-in").css("display", "inline-block");
       $("#welcome-text").empty();
     }
-  };
+  });
 
   $("#submit-btn").click(function (user) {
     var email = $("#email").val().trim();
@@ -89,7 +90,7 @@ $(document).ready(function () {
 
   $("#signout-btn").click(function () {
     firebase.auth().signOut();
-  });
+  })
 
 
   //very last brackets (Document Ready) below here!  
